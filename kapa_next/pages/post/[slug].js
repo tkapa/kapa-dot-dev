@@ -6,7 +6,7 @@ const Post = ({ post, content }) => {
     return(
         <Layout>
             <h1>{post.attributes.title}</h1>
-            <div classNmae='tracking-wide font-normal text-sm' 
+            <div className='tracking-wide font-normal text-sm' 
                 dangerouslySetInnerHTML={{__html: content}}></div>
         </Layout>
     )

@@ -4,13 +4,18 @@
 
 <MudLayout>
     <MudAppBar Elevation="0">
-        <MudText Typo="Typo.h3" Color="Color.Inherit" Class="ml-3">Tylah Kapa</MudText>
-        <MudText Typo="Typo.subtitle1" Color="Color.Inherit" Class="ml-3">Software Engineer, Games Developer</MudText>
+        <MudLink Href="/" Color="Color.Inherit" Underline="Underline.None" Class="d-flex me-4">
+            <MudText Typo="Typo.h3"> Tylah Kapa</MudText>
+        </MudLink>
+        <MudText Typo="Typo.subtitle1" Color="Color.Inherit">Software Engineer, Games Developer</MudText>
+        <MudLink Href="/blog" Color="Color.Inherit" Underline="Underline.None" Class="d-flex me-4 ml-3">
+            <MudText Typo="Typo.subtitle2">Blog</MudText>
+        </MudLink>
         <MudSpacer />
         <MudSwitch @bind-Checked="@_isDarkMode" 
             ThumbIcon="@(_isDarkMode ? Icons.Filled.WbSunny : Icons.Filled.ModeNight)" 
             ThumbIconColor="Color.Dark"
-            Color="Color.Inherit"
+            Color="Color.Default"
             Class="ma-4" T="bool"/>
         <MudIconButton Icon="@Icons.Custom.Brands.LinkedIn" Color="Color.Inherit" Link="https://www.linkedin.com/in/tylah-kapa/" Target="_blank" />
         <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/tkapa" Target="_blank" />

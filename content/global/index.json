@@ -1,11 +1,11 @@
 {
   "header": {
-    "name": "Tina Starter",
     "icon": {
-      "color": "orange",
-      "style": "float",
-      "name": "Tina"
+      "name": "Tina",
+      "color": "purple",
+      "style": "circle"
     },
+    "name": "kapa.dev",
     "color": "default",
     "nav": [
       {
@@ -25,14 +25,15 @@
   "footer": {
     "color": "default",
     "social": {
-      "facebook": "/",
-      "twitter": "/",
-      "instagram": "/"
+      "facebook": "",
+      "twitter": "https://twitter.com/JadeKapa",
+      "instagram": "",
+      "github": "https://github.com/tkapa"
     }
   },
   "theme": {
-    "color": "blue",
+    "color": "teal",
     "font": "sans",
-    "darkMode": "system"
+    "darkMode": "dark"
   }
 }

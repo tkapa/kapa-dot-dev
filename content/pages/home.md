@@ -2,12 +2,8 @@
 title: Tina Cloud Starter
 blocks:
   - headline: Welcome to kapa.dev
-    text: >
-      This project is set up to show you the basics of working with Tina. You're
-      looking at the landing page, which pulls content from
-      content/pages/home.md, components from components/blocks, and puts them
-      all together in pages/\[filename].tsx, all based on a schema defined in
-      .tina/schema.ts.
+    text: |
+      I'm updating this live from Tina Cloud :)
     actions:
       - label: Get Started
         type: button
@@ -50,4 +46,5 @@ blocks:
     color: tint
     _template: features
 ---
+
 

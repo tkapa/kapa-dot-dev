@@ -1,7 +1,8 @@
 ---
-title: Tina Cloud Starter
+title: Home
 blocks:
-  - headline: Welcome to kapa.dev
+  - tagline: 'Software Engineer, Game Developer'
+    headline: Welcome to kapa.dev
     text: |
       I'm updating this live from Tina Cloud :)
     actions:
@@ -14,10 +15,8 @@ blocks:
         icon: false
         link: /posts
     image:
-      src: /uploads/unsplash-75EFpyXu3Wg.jpg
-      alt: >-
-        Photo of palm trees at sunset by Adam Birkett -
-        unsplash.com/photos/75EFpyXu3Wg
+      src: ''
+      alt: ''
     color: default
     _template: hero
   - items:
@@ -46,5 +45,4 @@ blocks:
     color: tint
     _template: features
 ---
-
 

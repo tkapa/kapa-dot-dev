@@ -1,9 +1,9 @@
 {
   "header": {
     "icon": {
-      "name": "Tina",
-      "color": "purple",
-      "style": "circle"
+      "name": "BiCodeAlt",
+      "color": "orange",
+      "style": "float"
     },
     "name": "kapa.dev",
     "color": "default",
@@ -32,7 +32,7 @@
     }
   },
   "theme": {
-    "color": "teal",
+    "color": "orange",
     "font": "sans",
     "darkMode": "dark"
   }

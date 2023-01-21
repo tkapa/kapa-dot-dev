@@ -81,7 +81,10 @@ export const Header = ({ data }) => {
                     style: data.icon.style,
                   }}
                 />
-                {data.name}
+                <div className="flex flex-col gap-1">
+                <h2>{data.name}</h2>
+                <p>{data.subtitle}</p>
+                </div>
               </a>
             </Link>
           </h4>

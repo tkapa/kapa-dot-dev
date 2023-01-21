@@ -1,16 +1,15 @@
 ---
 title: Home
 blocks:
-  - tagline: 'Software Engineer, Game Developer'
-    headline: Welcome to kapa.dev
-    text: |
-      I'm updating this live from Tina Cloud :)
+  - tagline: ''
+    headline: Software Engineer and Game Developer
+    text: ''
     actions:
-      - label: Get Started
+      - label: Projects
         type: button
-        icon: true
-        link: /posts
-      - label: Read Blog
+        icon: false
+        link: /
+      - label: See my Blog
         type: link
         icon: false
         link: /posts

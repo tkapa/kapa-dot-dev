@@ -32,6 +32,26 @@ const config = defineStaticConfig({
   schema: {
     collections: [
       {
+        label: "Projects",
+        name: "projects",
+        path: "content/projects",
+        format: "mdx",
+        ui: {
+          router: ({document}) => {
+            return `/projects/${document._sys.filename}`;
+          }
+        },
+        fields: [
+          {
+            type: "string",
+            label: "Name",
+            name: "name",
+            isTitle: true,
+            required: true
+          }
+        ]
+      },
+      {
         label: "Blog Posts",
         name: "post",
         path: "content/posts",
@@ -167,6 +187,11 @@ const config = defineStaticConfig({
               },
               {
                 type: "string",
+                label: "Subtitle",
+                name: "subtitle"
+              },
+              {
+                type: "string",
                 label: "Color",
                 name: "color",
                 options: [
@@ -224,18 +249,8 @@ const config = defineStaticConfig({
                 fields: [
                   {
                     type: "string",
-                    label: "Facebook",
-                    name: "facebook",
-                  },
-                  {
-                    type: "string",
                     label: "Twitter",
                     name: "twitter",
-                  },
-                  {
-                    type: "string",
-                    label: "Instagram",
-                    name: "instagram",
                   },
                   {
                     type: "string",

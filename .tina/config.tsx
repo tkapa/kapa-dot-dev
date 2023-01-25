@@ -33,7 +33,7 @@ const config = defineStaticConfig({
     collections: [
       {
         label: "Projects",
-        name: "projects",
+        name: "project",
         path: "content/projects",
         format: "mdx",
         ui: {
@@ -48,7 +48,32 @@ const config = defineStaticConfig({
             name: "name",
             isTitle: true,
             required: true
-          }
+          },
+          {
+            type: "image",
+            name: "heroImg",
+            label: "Hero Image",
+          },
+          {
+            type: "rich-text",
+            label: "Excerpt",
+            name: "excerpt",
+          },
+          {
+            type: "datetime",
+            label: "Posted Date",
+            name: "date",
+            ui: {
+              dateFormat: "MMMM DD YYYY",
+              timeFormat: "hh:mm A",
+            },
+          },
+          {
+            type: "rich-text",
+            label: "Body",
+            name: "_body",
+            isBody: true,
+          },
         ]
       },
       {

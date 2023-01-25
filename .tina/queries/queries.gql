@@ -38,3 +38,10 @@ query blogPostQuery($relativePath: String!) {
     }
   }
 }
+
+query projectQuery($relativePath: String!){
+  ...LayoutQueryFragment
+  project(relativePath: $relativePath) {
+    ...ProjectParts
+  }
+}

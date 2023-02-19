@@ -1,9 +1,204 @@
 ---
 title: Discord UI in .NET MAUI
-excerpt: "Hey, how’s it going! I’m making this post as a part of #MAUIUIJuly, hosted by my colleague[ Matt Goldman](https://mobile.twitter.com/mattgoldman). If you want to see more posts around this topic, take a look [here](https://goforgoldman.com/2022/05/19/maui-ui-july.html)!\n\nExperience level - Beginner\n\nAs a beginner to .NET MAUI myself, there was no better way to force myself to get into the groove by participating in #MAUIUIJuly. Feel free to take a look at the [Github repository](https://github.com/tkapa/MauiUIJuly-Discord-UI) while you read this post.\n\nIt was difficult to decide what I should do , so as per Matt’s suggestion on his blog post, I chose to attempt recreating the UI of an app that I use on the daily! So in this blog post, I’m going to take a shot at a recreating a basic version of [Discord](https://discord.com/)’s UI.\n\nIn creating this mock-up I managed to learn a lot about .NET MAUI, and I was actually pretty impressed that I was able to do this as a side project after work. There were some awesome people on YouTube that helped me learn more, and I’ll share those resources at the end of this post.\n\nFigure: Discord’s existing mobile interface\n\n## WHERE WE START\n\nAs a beginner to .NET MAUI, Discord’s generic chat interface will be a perfect challenge to go about recreating with the time that I’ve allocated.\n\nLet’s break down the parts of the screen we’ll be creating today.\n\n### THE HEADER\n\nOutlined in purple, the header is quite simple. It contains some navigation buttons, a ‘#’ to indicate that we’re inside of a channel, the name of said channel. \n\n### THE CHAT\n\nOutlined in red, we spot a chat message. As a chat application, most of the screen real estate is dedicated to displaying these messages. For each message we have a user, a timestamp and message content. I was most worried about accurately recreating this part of the application.\n\n### &#x20;THE USER INPUT\n\nFinally, in yellow, we have the user input section, where we can send messages, images, gifs and more through the application. We’ve got some input buttons, and a message entry that the user will type their message into.\n\n## HOW WE IMPLEMENT IT\n\nLet’s jump right into our main page and implement the header. This is the part that I finished last, and I learned a good thing or two about Shell along the way. As we go through I set up some basic colours and styling, though I couldn’t manage to find the exact font in time for this submission.\n\n```html\n<!--Header Content-->\r\n<Shell.TitleView>\r\n  <HorizontalStackLayout Padding=\"-15\">\r\n\r\n    <Button BackgroundColor=\"#2F3136\">\r\n                <Button.ImageSource>\r\n                    <FontImageSource\r\n                        FontFamily=\"MaterialIcons\"\r\n                        Glyph=\"{x:Static helpers:MaterialFontHelper.Menu}\" \r\n                        Size=\"25\"\r\n                        Color=\"WhiteSmoke\"/>\r\n                </Button.ImageSource>\r\n            </Button>\r\n\r\n    <Label Text=\"#\"\r\n                   TextColor=\"#99aab5\"\r\n                   FontAttributes=\"Bold\"\r\n                   FontSize=\"20\"\r\n                   VerticalOptions=\"Center\"/>\r\n\r\n    <Label Text=\"general\"\r\n                   TextColor=\"WhiteSmoke\"\r\n                   FontAttributes=\"Bold\"\r\n                   FontSize=\"20\"\r\n                   Padding=\"5\"\r\n                   Margin=\"0,0,190,0\"\r\n                   VerticalOptions=\"Center\"/>\r\n\r\n    <Button BackgroundColor=\"#2F3136\">\r\n                <Button.ImageSource>\r\n                    <FontImageSource\r\n                        FontFamily=\"MaterialIcons\"\r\n                        Glyph=\"{x:Static helpers:MaterialFontHelper.AccountMultiple}\" \r\n                        Size=\"25\"\r\n                        Color=\"#FFFFFF\"/>\r\n                </Button.ImageSource>\r\n            </Button>\r\n\r\n  </HorizontalStackLayout>\r\n</Shell.TitleView>\n```\n"
+excerpt: |
+  For #MAUIUIJuly, I created a replication of Discord's chat UI.
 author: content/authors/Tylah-Kapa.md
+date: '2022-07-16T14:00:00.000Z'
 ---
 
-Test
+Hey, how’s it going! I’m making this post as a part of #MAUIUIJuly, hosted by my colleague[ Matt Goldman](https://mobile.twitter.com/mattgoldman). If you want to see more posts around this topic, take a look [here](https://goforgoldman.com/2022/05/19/maui-ui-july.html)!
 
-* Dot point
+Experience level - Beginner
+
+As a beginner to .NET MAUI myself, there was no better way to force myself to get into the groove by participating in #MAUIUIJuly. Feel free to take a look at the [Github repository](https://github.com/tkapa/MauiUIJuly-Discord-UI) while you read this post.
+
+It was difficult to decide what I should do , so as per Matt’s suggestion on his blog post, I chose to attempt recreating the UI of an app that I use on the daily! So in this blog post, I’m going to take a shot at a recreating a basic version of [Discord](https://discord.com/)’s UI.
+
+In creating this mock-up I managed to learn a lot about .NET MAUI, and I was actually pretty impressed that I was able to do this as a side project after work. There were some awesome people on YouTube that helped me learn more, and I’ll share those resources at the end of this post.
+
+Figure: Discord’s existing mobile interface
+
+## WHERE WE START
+
+As a beginner to .NET MAUI, Discord’s generic chat interface will be a perfect challenge to go about recreating with the time that I’ve allocated.
+
+Let’s break down the parts of the screen we’ll be creating today.
+
+### THE HEADER
+
+Outlined in purple, the header is quite simple. It contains some navigation buttons, a ‘#’ to indicate that we’re inside of a channel, the name of said channel. 
+
+### THE CHAT
+
+Outlined in red, we spot a chat message. As a chat application, most of the screen real estate is dedicated to displaying these messages. For each message we have a user, a timestamp and message content. I was most worried about accurately recreating this part of the application.
+
+### &#x20;THE USER INPUT
+
+Finally, in yellow, we have the user input section, where we can send messages, images, gifs and more through the application. We’ve got some input buttons, and a message entry that the user will type their message into.
+
+## HOW WE IMPLEMENT IT
+
+Let’s jump right into our main page and implement the header. This is the part that I finished last, and I learned a good thing or two about Shell along the way. As we go through I set up some basic colours and styling, though I couldn’t manage to find the exact font in time for this submission.
+
+```html
+<!--Header Content-->
+<Shell.TitleView>
+  <HorizontalStackLayout Padding="-15">
+
+    <Button BackgroundColor="#2F3136">
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="MaterialIcons"
+                        Glyph="{x:Static helpers:MaterialFontHelper.Menu}" 
+                        Size="25"
+                        Color="WhiteSmoke"/>
+                </Button.ImageSource>
+    </Button>
+    <Label Text="#"
+                   TextColor="#99aab5"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   VerticalOptions="Center"/>
+    <Label Text="general"
+                   TextColor="WhiteSmoke"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   Padding="5"
+                   Margin="0,0,190,0"
+                   VerticalOptions="Center"/>
+    <Button BackgroundColor="#2F3136">
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="MaterialIcons"
+                        Glyph="{x:Static helpers:MaterialFontHelper.AccountMultiple}" 
+                        Size="25"
+                        Color="#FFFFFF"/>
+                </Button.ImageSource>
+            </Button>
+  </HorizontalStackLayout>
+</Shell.TitleView>
+```
+
+You’ll notice that I’m using a FontImageSource to display glyphs using the MaterialIcons FontFamily. This is not a part of normal .NET MAUI as far as I’m aware. There is an excellent video by [Karl Searl](https://www.youtube.com/watch?v=L4tJW1ss2Hc) in which he explains how to pull in material icons from a .ttf file. We use these buttons and space them out to match Discord’s layout.
+
+I ended up putting both the chat display and the user input sections into a grid, the definitions for which look like:
+
+```html
+<Grid RowDefinitions="*, Auto"
+  Padding="5"
+  RowSpacing="5"
+  BackgroundColor="#36393F">
+```
+
+Now getting into the chat display. For this section, I ended up implementing some mock data, passed in through the View Model.  The details of the Message and User models can be found in the GitHub.
+
+
+
+```html
+<!--Display Messages-->
+<ScrollView Grid.Row="0" VerticalOptions="End">
+  <StackLayout BindableLayout.ItemsSource="{Binding MessageList}">
+    <BindableLayout.ItemTemplate>
+      <DataTemplate x:DataType="model:Message">
+        <HorizontalStackLayout Padding="0,5">
+          <Frame CornerRadius="20"
+          HeightRequest="40" 
+          WidthRequest="40" 
+          IsClippedToBounds="True"
+          HorizontalOptions="Center" 
+          VerticalOptions="Start">
+            <Image Source="{Binding User.ProfilePictureLink}"
+              Aspect="AspectFill" 
+              HeightRequest="40"
+              WidthRequest="40" />
+          </Frame>
+          <VerticalStackLayout Padding="10, 0" WidthRequest="350">
+            <HorizontalStackLayout>
+              <Label Text="{Binding User.Name}"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            TextColor="WhiteSmoke"/>
+              <Label Text="{Binding TimeStamp}"
+                            FontSize="10"
+                            Padding="3, 0"
+                            VerticalOptions="Center"
+                            TextColor="#E1E1E1"/>
+            </HorizontalStackLayout>
+            <Label Text="{Binding ChatMessage}"
+                        HorizontalOptions="Fill"
+                        FontSize="12"
+                        TextColor="WhiteSmoke"
+                        LineBreakMode="WordWrap"
+                        MaxLines="10"/>
+          </VerticalStackLayout>
+        </HorizontalStackLayout>
+      </DataTemplate>
+    </BindableLayout.ItemTemplate>
+  </StackLayout>
+</ScrollView>
+```
+
+We dump all of our messages into a ScrollView, so that we can scroll up to view past messages. We bind our Message objects to a template. I had some trouble figuring out how to get the nice circular images for the profile pictures. Luckily the [Frame](https://docs.microsoft.com/en-us/dotnet/maui/user-interface/controls/frame) documentation had a perfect example on how to create the effect we wanted.
+
+Let’s wrap it up with the user input section:
+
+```html
+<!--User Input-->
+<Grid Grid.Row="1" RowDefinitions="40" ColumnDefinitions="40,40,60*,Auto" ColumnSpacing="5" Padding="5"
+  VerticalOptions="End">
+  <Button
+    Grid.Column="0"
+    Grid.ColumnSpan="1"
+    CornerRadius="20"
+    BackgroundColor="#292B2F">
+        <Button.ImageSource>
+            <FontImageSource
+            FontFamily="MaterialIcons"
+            Glyph="{x:Static helpers:MaterialFontHelper.Plus}" 
+            Size="25"
+            Color="WhiteSmoke"/>
+        </Button.ImageSource>
+    </Button>
+  <Button
+    Grid.Column="1"
+    Grid.ColumnSpan="1"
+    CornerRadius="20"
+    BackgroundColor="#292B2F">
+        <Button.ImageSource>
+            <FontImageSource
+            FontFamily="MaterialIcons"
+            Glyph="{x:Static helpers:MaterialFontHelper.Gift}" 
+            Size="25"
+            Color="WhiteSmoke"/>
+        </Button.ImageSource>
+  </Button>
+  <Border Grid.Column="2" BackgroundColor="#292B2F" StrokeThickness="0">
+    <Border.StrokeShape>
+      <RoundRectangle CornerRadius="30" />
+    </Border.StrokeShape>
+    <Entry Keyboard="Chat" Margin="20,1,0,0" FontSize="12" Placeholder="Message #general" TextColor="WhiteSmoke"
+      BackgroundColor="#292B2F" Text="{Binding Text}" />
+  </Border>
+</Grid>
+```
+
+Here you’ll notice more of the FontImageSource used here to display some more material icons. The ordering here was pretty straightforward, and getting the buttons and inputs rounded and sized just right was incredibly satisfying.
+
+Figure: Discord UI replicated in .NET MAUI
+
+## THE RESULT
+
+So at the end of all that effort we get this!
+
+As someone who’s new to .NET MAUI, it’s been a pretty interesting journey to see how (relatively) easy it is to put together what can become a very rich chat application with not too much effort.
+
+I personally wanted to implement some of the dynamic and conditional features that Discord has implemented as part of their UX, like showing / hiding the “Send” button, or having options when hovering over messages.  
+
+I’d love to learn better ways to implement any of these features, and definitely look forward to using .NET MAUI in an enterprise setting in the future. It may also be great for something personal that I’d like to create.
+
+Check out the GitHub repository if you’d like to have a play around with the code. 
+
+See you next time!
+
+
+

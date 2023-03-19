@@ -19,6 +19,22 @@ query pageQuery {
   }
 }
 
+query projectPageQuery {
+  ...LayoutQueryFragment
+  projectConnection {
+    edges {
+      node {
+        id
+        _values
+        date
+        _sys {
+          filename
+        }
+      }
+    }
+  }
+}
+
 query contentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   page(relativePath: $relativePath) {

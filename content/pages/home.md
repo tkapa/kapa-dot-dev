@@ -8,7 +8,7 @@ blocks:
       - label: Projects
         type: button
         icon: false
-        link: /
+        link: /projects
       - label: See my Blog
         type: link
         icon: false
@@ -18,11 +18,10 @@ blocks:
       alt: ''
     color: default
     _template: hero
-  - body: |+
+  - body: |
       # **Welcome to kapa.dev**
 
       This is a work in progress. But I'm excited to see this grow.
-
     color: tint
     _template: content
 ---

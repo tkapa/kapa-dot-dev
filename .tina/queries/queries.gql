@@ -25,8 +25,8 @@ query projectPageQuery {
     edges {
       node {
         id
+        thumbnail
         _values
-        date
         _sys {
           filename
         }

@@ -10,8 +10,12 @@
     "color": "default",
     "nav": [
       {
-        "href": "",
+        "href": "home",
         "label": "Home"
+      },
+      {
+        "href": "/projects",
+        "label": "Projects"
       },
       {
         "href": "about",

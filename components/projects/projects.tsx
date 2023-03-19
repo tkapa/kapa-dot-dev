@@ -3,7 +3,6 @@ import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { BsArrowRight } from "react-icons/bs";
 import { useTheme } from "../layout";
-import format from "date-fns/format";
 import Image from "next/image";
 
 export const Projects = ({ data }) => {
@@ -23,11 +22,6 @@ export const Projects = ({ data }) => {
     <>
       {data.map((postData) => {
         const post = postData.node;
-        const date = new Date(post.date);
-        let formattedDate = "";
-        if (!isNaN(date.getTime())) {
-          formattedDate = format(date, "MMM dd, yyyy");
-        }
         return (
           <Link
             key={post._sys.filename}
@@ -36,21 +30,25 @@ export const Projects = ({ data }) => {
           >
             <a
               key={post.id}
-              className="group block px-6 sm:px-8 md:px-10 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-1000 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-800"
+              className="grid grid-cols-1 md:grid-cols-8 px-6 sm:px-8 md:px-10 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-1000 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-800"
             >
-              <Image src={post.heroImg} height="200px" width="200px"/>
-              <h3
-                className={`text-gray-700 dark:text-white text-3xl lg:text-4xl font-semibold title-font mb-5 transition-all duration-150 ease-out ${
-                  titleColorClasses[theme.color]
-                }`}
-              >
-                {post._values.name}{" "}
-                <span className="inline-block opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out">
-                  <BsArrowRight className="inline-block h-8 -mt-1 ml-1 w-auto opacity-70" />
-                </span>
-              </h3>
-              <div className="prose dark:prose-dark w-full max-w-none mb-5 opacity-70">
-                <TinaMarkdown content={post._values.excerpt} />
+              <div className="flex col-span-2 w-full justify-center">      
+                {
+                  post.thumbnail &&
+                    <Image src={post.thumbnail} height="150px" width="150px"/>
+                }
+              </div>
+              <div className="flex flex-col col-span-6 md:self-center pt-5 md:pt-0">
+                <h3
+                  className={`text-center md:text-left text-gray-700 dark:text-white text-3xl lg:text-4xl font-semibold title-font mb-5 transition-all duration-150 ease-out ${
+                    titleColorClasses[theme.color]
+                  }`}
+                >
+                  {post._values.name}
+                </h3>
+                <div className="prose dark:prose-dark w-full max-w-none mb-5 opacity-70">
+                  <TinaMarkdown content={post._values.excerpt} />
+                </div>
               </div>
             </a>
           </Link>

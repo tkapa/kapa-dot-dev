@@ -55,6 +55,11 @@ const config = defineStaticConfig({
             label: "Hero Image",
           },
           {
+            type: "image",
+            name: "thumbnail",
+            label: "Thumbnail Image",
+          },
+          {
             type: "rich-text",
             label: "Excerpt",
             name: "excerpt",

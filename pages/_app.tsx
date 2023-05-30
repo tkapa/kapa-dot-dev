@@ -1,4 +1,5 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "../styles.css";
 
 const App = ({ Component, pageProps }) => {
@@ -10,7 +11,12 @@ const App = ({ Component, pageProps }) => {
     return null;
   }
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
 };
 
 export default App;

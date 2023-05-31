@@ -7,7 +7,7 @@ import { Layout } from "../components/layout";
 export default function HomePage(
   props: AsyncReturnType<typeof getStaticProps>["props"]
 ) {
-  const posts = props.data.postConnection.edges;
+  const posts = props.data.postConnection.edges.reverse();
 
   return (
     <Layout>

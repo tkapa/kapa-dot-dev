@@ -10,6 +10,83 @@ date: '2023-05-31T14:00:00.000Z'
 
 In preparation for my appearance at SSW's .NET User Group, I'm going to be doing this blog, specifically *not* on .NET related tech. So let's jump into it :)
 
-# What is Vercel? 
+# What is Vercel?
 
-[Vercel](https://vercel.com/)
+[Vercel](https://vercel.com/) is an "**end-to-end platform for developers**". It'll let you create and deploy your web applications. It supports a [wide range of frameworks](https://vercel.com/docs/frameworks), and manages your project's deployments, CI/CD and monitoring whilst providing an awesome suite of additional features, which could be their own talk.
+
+# Why'd I move?
+
+Well, I had a money problem... and **I'm lazy**.
+
+Originally, I was happy with using a paid service to host my website. It was sufficient for the time, and I don't blame anyone for using anything similar. But I don't update it often enough for it to be worth it. So then came the revelation:
+
+> *I'm a bloody developer, why don't I develop something? - Me :)*
+
+My requirements would be as follows:
+
+* Easy to stand-up
+* Easy to update
+* No maintenance
+* FREE
+
+# How'd I move?
+
+I started thinking about what I knew and what that would entail:
+
+1. Create my Git repo
+2. Azure resources for hosting and storage of data
+3. GitHub Action to trigger deployments
+
+All of this is **before I even started to write code**. While it's not a lot, as I said, I'm lazy. The more time I can spend reading outside of work, the better.
+
+I started about 2 different versions of my new portfolio in different frameworks and standing up the site before I was informed of how [Vercel might be beneficial to someone like me](https://www.dandoescode.com/blog/migrating-from-gatsby-to-nextjs) by coworker [Daniel Mackay](https://ssw.com.au/people/daniel-mackay) (he's awesome, check him out).
+
+So I finally created a new GitHub repository with a NextJs template project. Which I was then simply able to point at with Vercel, and tell it to make it a project to deploy.
+
+> \*That's it? - Me (and also you) \*
+
+This whole process that I was umming and ahhing about was boiled down to:
+
+1. Create a Git repo
+2. Click the `Deploy` button on Vercel
+
+Wild, huh? It turns out you don't even need that first step, because Vercel can stand up a [number of templates](https://vercel.com/templates) for you in seconds. Seriously, just try it.
+
+# So how can *you* use Vercel?
+
+Vercel is **suitable for both personal and enterprise applications**. However, as a personal or hobby developer, you'd be pretty crazy to miss out on the value that Vercel can provide to you. It's possible for Azure to provide all of these features and more, **what you're giving up is your time** in preparing everything and in some cases, money if you don't have free Azure credits.
+
+This is inclusive of:
+
+* Preview deployments
+* Logging
+* Monitoring
+* Access to storage (PostgreSQL, Edge Config, KV, Blob Storage)
+* Integrations with enterprise products (including pre-built templates)
+* Domain management
+
+If you're looking for somewhere to stand-up your portfolio, your blog or a simple hobby project. Whether you're experienced or just learning, Vercel has something to offer you. All you need to do is sign up (preferably with your Git provider of choice), and you're away.
+
+# What are the downsides?
+
+I've talked up Vercel a lot, but that doesn't mean that it's necessarily better. Let's take a look at some of the downsides to committing to Vercel.
+
+DevOps is predominantly handled for you
+
+You won't get as fine grained control of your pipelines as you might like. When
+
+You don't have control over up-time
+
+Naturally, being on the cloud, up-time is not guaranteed. You also don't have control over the scaling of your application.
+
+You're locked into the JS ecosystem (kind of)
+
+Ultimately, Vercel will deploy a Docker image to AWS, it might not be impossible to use something like Blazor, but you're not going to have a good time. Competitors like Heroku or Netlify may be more suitable for you in this case.
+
+# Summary
+
+Today I've shown you the vast world of Vercel, and how I personally used to to not only save myself money, but learn some cool things along the way. I hope that you're inspired to jump in and deploy a project, and find the experience as seamless as I did!\
+\
+I'd love to know what you've built with Vercel over at [Twitter](https://twitter.com/JadeKapa) or [LinkedIn](https://www.linkedin.com/in/tylah-kapa/).
+
+Cheers!

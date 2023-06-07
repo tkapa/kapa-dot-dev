@@ -11,7 +11,7 @@ export const Header = ({ data }) => {
 
   const headerColor = {
     default:
-      "text-black dark:text-white from-gray-50 to-white dark:from-gray-800 dark:to-gray-900",
+      "text-black dark:text-white from-gray-50 to-white dark:from-kapa dark:to-kapa",
     primary: {
       blue: "text-white from-blue-300 to-blue-500",
       teal: "text-white from-teal-400 to-teal-500",
@@ -82,8 +82,8 @@ export const Header = ({ data }) => {
                   }}
                 />
                 <div className="flex flex-col gap-1">
-                <h2>{data.name}</h2>
-                <p>{data.subtitle}</p>
+                  <h2>{data.name}</h2>
+                  <p>{data.subtitle}</p>
                 </div>
               </a>
             </Link>

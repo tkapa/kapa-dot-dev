@@ -16,7 +16,7 @@ blocks:
     image:
       src: ''
       alt: ''
-    color: default
+    color: tint
     _template: hero
   - body: |
       # **Welcome to kapa.dev**
@@ -25,4 +25,5 @@ blocks:
     color: tint
     _template: content
 ---
+
 

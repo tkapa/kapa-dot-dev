@@ -23,8 +23,7 @@ export const Footer = ({ data, icon, rawData }) => {
   };
 
   const footerColor = {
-    default:
-      "text-gray-800 from-white to-gray-50 dark:from-gray-900 dark:to-gray-1000",
+    default: "text-gray-800 from-white to-gray-50 dark:from-kapa dark:to-kapa",
     primary: {
       blue: "text-white from-blue-500 to-blue-700",
       teal: "text-white from-teal-500 to-teal-600",
@@ -43,7 +42,7 @@ export const Footer = ({ data, icon, rawData }) => {
       : footerColor.default;
 
   return (
-    <footer className={`bg-gradient-to-br ${footerColorCss}`}>
+    <footer className={`bg-gradient-to-b ${footerColorCss}`}>
       <Container className="relative" size="small">
         <div className="flex justify-between items-center gap-6 flex-wrap">
           <Link href="/" passHref>

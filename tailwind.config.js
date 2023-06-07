@@ -102,6 +102,13 @@ module.exports = {
         nunito: ["Nunito", ...defaultTheme.fontFamily.sans],
         lato: ["Lato", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        kapa: {
+          DEFAULT: "#0b132b",
+          lighter: "#1c2541",
+          accent: "#5bc0be"
+        }
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

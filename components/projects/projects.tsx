@@ -30,13 +30,12 @@ export const Projects = ({ data }) => {
           >
             <a
               key={post.id}
-              className="grid grid-cols-1 md:grid-cols-8 px-6 sm:px-8 md:px-10 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-1000 rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-800"
+              className="grid grid-cols-1 md:grid-cols-8 px-6 sm:px-8 md:px-10 py-10 mb-8 last:mb-0 bg-gray-50 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-kapa dark:to-kapa-lighter rounded-md shadow-sm transition-all duration-150 ease-out hover:shadow-md hover:to-gray-50 dark:hover:to-gray-800"
             >
-              <div className="flex col-span-2 w-full justify-center">      
-                {
-                  post.thumbnail &&
-                    <Image src={post.thumbnail} height="150px" width="150px"/>
-                }
+              <div className="flex col-span-2 w-full justify-center">
+                {post.thumbnail && (
+                  <Image src={post.thumbnail} height="150px" width="150px" />
+                )}
               </div>
               <div className="flex flex-col col-span-6 md:self-center pt-5 md:pt-0">
                 <h3

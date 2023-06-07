@@ -18,12 +18,7 @@ blocks:
       alt: ''
     color: tint
     _template: hero
-  - body: |
-      # **Welcome to kapa.dev**
-
-      This is a work in progress. But I'm excited to see this grow.
-    color: tint
-    _template: content
 ---
+
 
 
